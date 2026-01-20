@@ -15,7 +15,6 @@ public class RecipeTriggerBar : MonoBehaviour
     private readonly HashSet<Collider> collidersInTrigger = new HashSet<Collider>();
     private readonly HashSet<Collider> lockedColliders = new HashSet<Collider>(); // Colliders that cannot be reused until they exit and re-enter
 
-    private float timer = 0f;                                  // Global reaction timer
     private List<Collider> activeColliders = new List<Collider>(); // Colliders used in the matched recipe
 
     private void OnTriggerEnter(Collider other)
@@ -125,7 +124,7 @@ public class RecipeTriggerBar : MonoBehaviour
         // Clear trigger
         collidersInTrigger.Clear();
 
-        Debug.Log("Cocktail created with effects: " + string.Join(", ", effects));
+        
     }
 
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7368507311516718281}
   - component: {fileID: 6735458632257670202}
   - component: {fileID: 5776317690697365573}
+  - component: {fileID: 3290156683906416789}
   m_Layer: 0
   m_Name: Pixi_Brew
   m_TagString: Untagged
@@ -173,3 +174,16 @@ MonoBehaviour:
   shouldPropagateDragEvents: 1
   shouldIgnoreRigidbodySettingFromDragger: 0
   removeFromParentAtAwake: 0
+--- !u!114 &3290156683906416789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457336245559273206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca2543e5a24e2f4db7e98987daadd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrinkItem
+  type: 7

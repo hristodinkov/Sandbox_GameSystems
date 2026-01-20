@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7146374167907188960}
   - component: {fileID: 7738305771945902567}
   - component: {fileID: 2827521273255472730}
+  - component: {fileID: 5583923056897391526}
   m_Layer: 0
   m_Name: Angel_Brew
   m_TagString: Untagged
@@ -171,3 +172,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0151978005, y: 0.009689991, z: 0.021448594}
   m_Center: {x: -0.000009203364, y: 0.0000013720411, z: 0.0020858091}
+--- !u!114 &5583923056897391526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858282078767544872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca2543e5a24e2f4db7e98987daadd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrinkItem
+  type: 8

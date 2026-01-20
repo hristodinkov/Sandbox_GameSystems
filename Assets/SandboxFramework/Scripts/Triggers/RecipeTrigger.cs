@@ -12,6 +12,10 @@ public class RecipeTrigger : MonoBehaviour
         public UnityEvent onRecipeMatched;                     // Event triggered when the recipe is matched
     }
 
+    public DrinkMixer mixer;            // Drag your DrinkMixer here
+    public GameObject cocktailPrefab;   // Prefab with CocktailData
+
+
     public List<Recipe> recipes = new List<Recipe>();          // All recipes for this object
     public float reactionTime = 1f;                            // Global reaction time for any recipe
     public bool autoDestroy = true;                            // Should objects be destroyed after recipe trigger?
@@ -64,7 +68,9 @@ public class RecipeTrigger : MonoBehaviour
             if (timer >= reactionTime)
             {
                 // Trigger recipe event
-                activeRecipe.onRecipeMatched?.Invoke();
+                CreateCocktailFromRecipe(activeColliders);
+
+                //activeRecipe.onRecipeMatched?.Invoke();
 
                 if (autoDestroy)
                 {
@@ -98,6 +104,32 @@ public class RecipeTrigger : MonoBehaviour
         activeRecipe = null;
         activeColliders.Clear();
         timer = 0f;
+    }
+
+    private void CreateCocktailFromRecipe(List<Collider> usedColliders)
+    {
+        if (usedColliders.Count != 3)
+        {
+            Debug.LogError("RecipeTrigger expected exactly 3 ingredients.");
+            return;
+        }
+
+        // Convert colliders → DrinkTypes
+        DrinkType d1 = usedColliders[0].GetComponent<DrinkItem>().type;
+        DrinkType d2 = usedColliders[1].GetComponent<DrinkItem>().type;
+        DrinkType d3 = usedColliders[2].GetComponent<DrinkItem>().type;
+
+        // Mix the drink
+        DrinkEffectType[] effects = mixer.Mix(d1, d2, d3);
+
+        // Spawn cocktail
+        GameObject cocktail = Instantiate(cocktailPrefab, transform.position, Quaternion.identity);
+
+        // Store effects
+        CocktailData data = cocktail.GetComponent<CocktailData>();
+        data.SetEffects(effects);
+
+        Debug.Log("Cocktail created with effects: " + string.Join(", ", effects));
     }
 
     private void FindBestMatch()

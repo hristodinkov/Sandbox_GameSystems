@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3998873175018058365}
   - component: {fileID: 6358862251936154075}
   - component: {fileID: 5168814625462541012}
+  - component: {fileID: 7230208956184110928}
   m_Layer: 0
   m_Name: Ginger_Tonic
   m_TagString: Untagged
@@ -169,3 +170,16 @@ MonoBehaviour:
   shouldPropagateDragEvents: 1
   shouldIgnoreRigidbodySettingFromDragger: 0
   removeFromParentAtAwake: 0
+--- !u!114 &7230208956184110928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936959363587928921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca2543e5a24e2f4db7e98987daadd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrinkItem
+  type: 4

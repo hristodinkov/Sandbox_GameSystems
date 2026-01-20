@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c873ac08e92a44ab665abaeeac79a6, type: 3}
+  m_Name: Database
+  m_EditorClassIdentifier: Assembly-CSharp::DrinkPairEffectDatabase
+  combinations:
+  - drinkA: 0
+    drinkB: 1
+    effect: 5
+  - drinkA: 0
+    drinkB: 2
+    effect: 2
+  - drinkA: 0
+    drinkB: 3
+    effect: 6
+  - drinkA: 0
+    drinkB: 4
+    effect: 7
+  - drinkA: 0
+    drinkB: 5
+    effect: 3
+  - drinkA: 0
+    drinkB: 6
+    effect: 0
+  - drinkA: 0
+    drinkB: 7
+    effect: 1
+  - drinkA: 0
+    drinkB: 8
+    effect: 2
+  - drinkA: 1
+    drinkB: 2
+    effect: 0
+  - drinkA: 1
+    drinkB: 3
+    effect: 5
+  - drinkA: 1
+    drinkB: 4
+    effect: 1
+  - drinkA: 1
+    drinkB: 5
+    effect: 0
+  - drinkA: 1
+    drinkB: 6
+    effect: 6
+  - drinkA: 1
+    drinkB: 7
+    effect: 2
+  - drinkA: 1
+    drinkB: 8
+    effect: 4
+  - drinkA: 2
+    drinkB: 3
+    effect: 7
+  - drinkA: 2
+    drinkB: 4
+    effect: 4
+  - drinkA: 2
+    drinkB: 5
+    effect: 3
+  - drinkA: 2
+    drinkB: 6
+    effect: 6
+  - drinkA: 2
+    drinkB: 7
+    effect: 1
+  - drinkA: 2
+    drinkB: 8
+    effect: 2
+  - drinkA: 3
+    drinkB: 4
+    effect: 0
+  - drinkA: 3
+    drinkB: 5
+    effect: 5
+  - drinkA: 3
+    drinkB: 6
+    effect: 3
+  - drinkA: 3
+    drinkB: 7
+    effect: 7
+  - drinkA: 3
+    drinkB: 8
+    effect: 2
+  - drinkA: 4
+    drinkB: 5
+    effect: 0
+  - drinkA: 4
+    drinkB: 6
+    effect: 5
+  - drinkA: 4
+    drinkB: 7
+    effect: 4
+  - drinkA: 4
+    drinkB: 8
+    effect: 7
+  - drinkA: 5
+    drinkB: 6
+    effect: 3
+  - drinkA: 5
+    drinkB: 7
+    effect: 7
+  - drinkA: 5
+    drinkB: 8
+    effect: 1
+  - drinkA: 6
+    drinkB: 7
+    effect: 4
+  - drinkA: 6
+    drinkB: 8
+    effect: 5
+  - drinkA: 7
+    drinkB: 8
+    effect: 2

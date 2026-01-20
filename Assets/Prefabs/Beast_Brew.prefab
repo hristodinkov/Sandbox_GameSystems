@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3862231355882189689}
   - component: {fileID: 2507385904621915195}
   - component: {fileID: 8151486670246883537}
+  - component: {fileID: 2959798567790675570}
   m_Layer: 0
   m_Name: Beast_Brew
   m_TagString: Untagged
@@ -174,3 +175,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010119114, y: 0.010120327, z: 0.016105015}
   m_Center: {x: 0.000120549215, y: 0.0004220972, z: -0.0011556733}
+--- !u!114 &2959798567790675570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7795365818717889096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca2543e5a24e2f4db7e98987daadd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrinkItem
+  type: 6

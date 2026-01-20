@@ -19,6 +19,42 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    public GameObject SpawnWithEffects(DrinkEffectType[] effects)
+    {
+        if (!enabled) return null;
+
+        if (spawnLocation == null)
+            spawnLocation = transform;
+
+        if (prefabs.Length == 0)
+        {
+            Debug.LogWarning("Prefabs are not assigned");
+            return null;
+        }
+
+        GameObject prefab = prefabs[Random.Range(0, prefabs.Length)];
+
+        if (prefab == null)
+        {
+            Debug.LogWarning("Prefab is not assigned!");
+            return null;
+        }
+
+        GameObject instance = Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);
+        instance.transform.localScale = prefab.transform.localScale * scale;
+        instance.name = prefab.name;
+
+        // Attach CocktailData
+        CocktailData data = instance.GetComponent<CocktailData>();
+        if (data == null)
+            data = instance.AddComponent<CocktailData>();
+
+        data.SetEffects(effects);
+
+        return instance;
+    }
+
+
     /// <summary>
     /// Spawns a random prefab from the array at the spawn location with specified scale.
     /// </summary>
@@ -63,5 +99,7 @@ public class Spawner : MonoBehaviour
             // Assign the spawned instance the same name as the prefab for clarity
             instance.name = prefab.name;
         }
+
+
     }
 }

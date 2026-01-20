@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9091706703305814297}
   m_Layer: 0
-  m_Name: OrangeJuice
+  m_Name: orangejuice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

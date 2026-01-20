@@ -99,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7663655046324692330}
   m_Layer: 0
-  m_Name: Vodka
+  m_Name: vodka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,10 +134,10 @@ GameObject:
   - component: {fileID: 5676026261203035314}
   - component: {fileID: 3248058795536594941}
   - component: {fileID: 1834373179373308184}
-  - component: {fileID: 4056562313893158981}
   - component: {fileID: 2420476372628216652}
   - component: {fileID: 4769940422923466305}
   - component: {fileID: 7862433275551497406}
+  - component: {fileID: 2180105620531371179}
   m_Layer: 0
   m_Name: Vodka bottle
   m_TagString: Untagged
@@ -245,29 +245,6 @@ MonoBehaviour:
   shouldPropagateDragEvents: 1
   shouldIgnoreRigidbodySettingFromDragger: 0
   removeFromParentAtAwake: 0
---- !u!136 &4056562313893158981
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6787703030221428603}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.031945612
-  m_Height: 0.18790017
-  m_Direction: 1
-  m_Center: {x: 0.000020397834, y: 0.0939418, z: -0.00004245901}
 --- !u!54 &2420476372628216652
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -320,3 +297,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrinkItem
   type: 1
+--- !u!65 &2180105620531371179
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787703030221428603}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.06383435, y: 0.18790017, z: 0.063891195}
+  m_Center: {x: 0.000020278616, y: 0.09394174, z: -0.00004150532}

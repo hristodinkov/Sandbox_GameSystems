@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7605895455128279345}
   - component: {fileID: 40166920194365118}
   - component: {fileID: 7236275783881675665}
-  - component: {fileID: 2188809976860675975}
+  - component: {fileID: 3996345110218376768}
   m_Layer: 0
   m_Name: Cocktail
   m_TagString: Untagged
@@ -148,8 +148,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &2188809976860675975
-CapsuleCollider:
+--- !u!65 &3996345110218376768
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -166,8 +166,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.6948755
-  m_Height: 3.7844963
-  m_Direction: 2
-  m_Center: {x: -15.048857, y: 2.0088769e-14, z: 2.4460127}
+  serializedVersion: 3
+  m_Size: {x: 1.149621, y: 1.1496221, z: 3.7844958}
+  m_Center: {x: -14.925959, y: -0.00000005960466, z: 2.4460127}

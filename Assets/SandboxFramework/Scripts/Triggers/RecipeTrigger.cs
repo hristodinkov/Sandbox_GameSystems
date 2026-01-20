@@ -34,6 +34,8 @@ public class RecipeTrigger : MonoBehaviour
 
         // If collider was previously locked, unlock it now (fresh entry)
         lockedColliders.Remove(other);
+        
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -108,6 +110,8 @@ public class RecipeTrigger : MonoBehaviour
 
     private void CreateCocktailFromRecipe(List<Collider> usedColliders)
     {
+        Debug.Log("Creating cocktail...");
+
         if (usedColliders.Count != 3)
         {
             Debug.LogError("RecipeTrigger expected exactly 3 ingredients.");
@@ -134,12 +138,15 @@ public class RecipeTrigger : MonoBehaviour
 
     private void FindBestMatch()
     {
+
         Recipe best = null;
         List<Collider> bestColliders = null;
         int bestCount = -1;
 
         foreach (var recipe in recipes)
         {
+            Debug.Log("Checking recipe: " + string.Join(",", recipe.ingredients));
+
             if (RecipeMatches(recipe, out List<Collider> usedColliders))
             {
                 int count = recipe.ingredients.Count;
@@ -162,11 +169,14 @@ public class RecipeTrigger : MonoBehaviour
 
     private bool RecipeMatches(Recipe recipe, out List<Collider> usedColliders)
     {
+
         List<Collider> available = new List<Collider>(collidersInTrigger);
         usedColliders = new List<Collider>();
 
         foreach (var ingredient in recipe.ingredients)
         {
+            Debug.Log("Trying to match ingredient: " + ingredient);
+
             string target = ingredient.ToLowerInvariant();
             bool found = false;
 

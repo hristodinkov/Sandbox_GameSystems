@@ -22,6 +22,12 @@ public class CocktailReceiver : MonoBehaviour
     [SerializeField] private GameObject theWholeGameObject;
     [SerializeField] private Animator bossAnimator;
 
+    [SerializeField] private AudioSource hiccupAudioSource;
+    [SerializeField] private AudioSource fartAudioSource;
+    [SerializeField] private AudioSource chickenAudioSource;
+    [SerializeField] private AudioSource hellicopterAudioSource;
+    [SerializeField] private AudioSource fireBreathAudioSource;
+
     [SerializeField] private float speedRotation;
 
     private Coroutine hiccupRoutine;
@@ -50,6 +56,8 @@ public class CocktailReceiver : MonoBehaviour
         if (helicopterEffectEnabled)
         {
             theWholeGameObject.transform.Rotate(0, 300f * Time.deltaTime*speedRotation, 0);
+            if (!hellicopterAudioSource.isPlaying)
+                hellicopterAudioSource.Play();
         }
         else
         {
@@ -93,6 +101,8 @@ public class CocktailReceiver : MonoBehaviour
     {
         while (hiccupEffectEnabled)
         {
+            if (!hiccupAudioSource.isPlaying)
+                hiccupAudioSource.Play();
             // Hiccup animation
             theWholeGameObject.transform.position += new Vector3(0, 0.5f, 0);
             yield return new WaitForSeconds(0.2f);
@@ -106,18 +116,6 @@ public class CocktailReceiver : MonoBehaviour
     }
 
 
-
-    private IEnumerator Hiccup()
-    {
-        if (hiccupEffectEnabled)
-        {
-            theWholeGameObject.transform.position += new Vector3(0, 0.5f, 0);
-            yield return new WaitForSeconds(0.2f);
-            theWholeGameObject.transform.position -= new Vector3(0, 0.5f, 0);
-            yield return new WaitForSeconds(4f);
-        }
-        
-    }
 
     private void Shrink()
     {
@@ -140,6 +138,8 @@ public class CocktailReceiver : MonoBehaviour
         {
             if (!fartEffect.isPlaying)
                 fartEffect.Play();
+            if (!fartAudioSource.isPlaying)
+                fartAudioSource.Play();
         }
         else
         {
@@ -155,18 +155,21 @@ public class CocktailReceiver : MonoBehaviour
             chickenModel.SetActive(true);
             theBoss.SetActive(false);
 
-            // Play transformation effect
-            chickenTransformation.Play();
+            if (chickenTransformation != null && !chickenTransformation.isPlaying)
+                chickenTransformation.Play();
+            if (!chickenAudioSource.isPlaying) 
+                chickenAudioSource.Play();
         }
         else
         {
             chickenModel.SetActive(false);
             theBoss.SetActive(true);
 
-            // Stop but DO NOT disable the GameObject
-            chickenTransformation.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            if (chickenTransformation != null)
+                chickenTransformation.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
     }
+
 
 
     private void IceCube()
@@ -182,6 +185,8 @@ public class CocktailReceiver : MonoBehaviour
         {
             if (!fireBreathEffect.isPlaying)
                 fireBreathEffect.Play();
+            if (!fireBreathAudioSource.isPlaying) 
+                fireBreathAudioSource.Play();
         }
         else
         {
@@ -199,6 +204,12 @@ public class CocktailReceiver : MonoBehaviour
         shrinkEffectEnabled = false;
         hiccupEffectEnabled = false;
 
+        fireBreathAudioSource.Stop();
+        fartAudioSource.Stop(); 
+        chickenAudioSource.Stop(); 
+        hellicopterAudioSource.Stop(); 
+        hiccupAudioSource.Stop();
+
         if (hiccupRoutine != null)
         {
             StopCoroutine(hiccupRoutine);
@@ -206,7 +217,7 @@ public class CocktailReceiver : MonoBehaviour
         }
 
         theWholeGameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-        theWholeGameObject.transform.Rotate(0, 0f, 0);
+        theWholeGameObject.transform.rotation = Quaternion.identity;
     }
    
 
